@@ -1,0 +1,152 @@
+export const projects = [
+  {
+    id: "lighthouse-app",
+    title: "Lighthouse App",
+    category: "Mobile App",
+    tag: "Mobile",
+    emoji: "🏔️",
+    color: "from-[#1a237e] to-[#283593]",
+    desc: "A travel and adventure app helping users discover hidden gems and plan trips effortlessly.",
+    longDesc: `Lighthouse App is a full-featured travel companion built for adventure seekers. 
+    The app provides personalized recommendations based on user preferences, real-time weather 
+    updates, offline map support, and a community-driven review system. Designed with a clean 
+    and intuitive UI to make every trip planning experience enjoyable.`,
+    tech: ["React Native", "Node.js", "MongoDB"],
+    features: [
+      "Personalized trip recommendations",
+      "Real-time weather integration",
+      "Offline map support",
+      "Community reviews & ratings",
+      "Push notifications",
+    ],
+    demo: "https://demo.example.com",
+    github: "https://github.com/johni/lighthouse-app",
+    status: "Completed",
+    year: "2024",
+  },
+  {
+    id: "bryan-lane",
+    title: "Bryan Lane",
+    category: "Web App",
+    tag: "Web",
+    emoji: "🛍️",
+    color: "from-[#4a148c] to-[#6a1b9a]",
+    desc: "A modern e-commerce platform with seamless UX and high performance product management.",
+    longDesc: `Bryan Lane is a high-performance e-commerce platform built for modern retail businesses. 
+    Features include advanced product filtering, real-time inventory management, secure payment 
+    gateway integration, and a powerful admin dashboard. Optimized for speed and SEO to maximize 
+    online visibility and conversions.`,
+    tech: ["Next.js", "Tailwind", "PostgreSQL"],
+    features: [
+      "Advanced product filtering",
+      "Real-time inventory management",
+      "Secure payment gateway",
+      "Admin dashboard",
+      "SEO optimized",
+    ],
+    demo: "https://demo.example.com",
+    github: "https://github.com/johni/bryan-lane",
+    status: "Completed",
+    year: "2024",
+  },
+  {
+    id: "mama-apps",
+    title: "Mama Apps",
+    category: "UI/UX Design",
+    tag: "Design",
+    emoji: "📱",
+    color: "from-[#1b0036] to-[#4a0080]",
+    desc: "A family management app designed to keep families connected and organized daily.",
+    longDesc: `Mama Apps is a family-centered productivity application that helps families stay 
+    connected and organized. Features include shared calendars, task assignments, grocery lists, 
+    family chat, and milestone tracking. The app focuses on simplicity and warmth in its design 
+    to appeal to all age groups within a family.`,
+    tech: ["Figma", "React", "Firebase"],
+    features: [
+      "Shared family calendar",
+      "Task & chore management",
+      "Grocery list sharing",
+      "Family group chat",
+      "Milestone tracking",
+    ],
+    demo: "https://demo.example.com",
+    github: "https://github.com/johni/mama-apps",
+    status: "Completed",
+    year: "2023",
+  },
+  {
+    id: "dashboard-analytics",
+    title: "Dashboard Analytics",
+    category: "Web App",
+    tag: "Web",
+    emoji: "📊",
+    color: "from-[#0d47a1] to-[#1565c0]",
+    desc: "A powerful analytics dashboard with real-time data visualization and reporting tools.",
+    longDesc: `Dashboard Analytics is a comprehensive business intelligence tool that transforms 
+    raw data into actionable insights. Features real-time charts, customizable widgets, automated 
+    report generation, and multi-source data integration. Built for scalability to handle large 
+    datasets without compromising performance.`,
+    tech: ["React", "Chart.js", "Laravel"],
+    features: [
+      "Real-time data visualization",
+      "Customizable dashboard widgets",
+      "Automated report generation",
+      "Multi-source data integration",
+      "Export to PDF & Excel",
+    ],
+    demo: "https://demo.example.com",
+    github: "https://github.com/johni/dashboard-analytics",
+    status: "In Progress",
+    year: "2024",
+  },
+  {
+    id: "portfolio-cms",
+    title: "Portfolio CMS",
+    category: "Full Stack",
+    tag: "Full Stack",
+    emoji: "🎨",
+    color: "from-[#b71c1c] to-[#c62828]",
+    desc: "A custom CMS built for creative professionals to showcase their work beautifully.",
+    longDesc: `Portfolio CMS is a headless content management system specifically designed for 
+    designers, photographers, and creative professionals. It offers drag-and-drop page building, 
+    media management, SEO tools, and custom domain support. The system is lightweight yet powerful 
+    enough to handle complex portfolio structures.`,
+    tech: ["Next.js", "Prisma", "MySQL"],
+    features: [
+      "Drag & drop page builder",
+      "Media library management",
+      "Custom domain support",
+      "SEO management tools",
+      "Multi-user collaboration",
+    ],
+    demo: "https://demo.example.com",
+    github: "https://github.com/johni/portfolio-cms",
+    status: "Completed",
+    year: "2023",
+  },
+  {
+    id: "chat-realtime",
+    title: "Chat Real-time",
+    category: "Full Stack",
+    tag: "Full Stack",
+    emoji: "💬",
+    color: "from-[#1b5e20] to-[#2e7d32]",
+    desc: "A real-time chat application with rooms, notifications, and file sharing features.",
+    longDesc: `Chat Real-time is a modern messaging platform built for teams and communities. 
+    It supports public and private rooms, direct messaging, file sharing, emoji reactions, 
+    and message threading. Built on WebSocket technology for instant message delivery with 
+    end-to-end encryption for maximum security.`,
+    tech: ["Socket.io", "Node.js", "React"],
+    features: [
+      "Public & private chat rooms",
+      "Direct messaging",
+      "File & media sharing",
+      "Emoji reactions",
+      "End-to-end encryption",
+    ],
+    demo: "https://demo.example.com",
+    github: "https://github.com/johni/chat-realtime",
+    status: "Completed",
+    year: "2023",
+  },
+];

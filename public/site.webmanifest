@@ -1,0 +1,16 @@
+{
+  "name": "Johni Revormasi Ziliwu Portfolio",
+  "short_name": "Johni Portfolio",
+  "description": "Full Stack Developer & UI/UX Enthusiast",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#f47c20",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
