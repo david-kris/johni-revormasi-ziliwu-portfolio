@@ -10,8 +10,8 @@ const contactInfo = [
   {
     icon: "📧",
     label: "Email",
-    value: "jrevormasi@gmail.com",
-    href: "mailto:jrevormasi@gmail.com",
+    value: "studiorevormasi@gmail.com",
+    href: "mailto:studiorevormasi@gmail.com",
   },
   {
     icon: "💬",
@@ -23,7 +23,7 @@ const contactInfo = [
     icon: "📍",
     label: "Location",
     value: "Bali, Indonesia",
-    href: "#map",
+    href: "https://www.google.com/maps/place/8%C2%B039'55.3%22S+115%C2%B013'19.0%22E/@-8.6653469,115.2193751,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-8.6653469!4d115.22195?hl=id&entry=ttu&g_ep=EgoyMDI2MDUxMS4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     icon: "🕐",
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     placeholder="Johni Ziliwu"
-                    className="w-full bg-white/5 border border-[#f47c20] rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-[#f47c20]/50 focus:bg-white/8 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-white/10/50 focus:bg-white/8 transition-all"
                   />
                 </div>
                 <div>
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     placeholder="johni@email.com"
-                    className="w-full bg-white/5 border border-[#f47c20] rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-[#f47c20]/50 focus:bg-white/8 transition-all"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-white/10/50 focus:bg-white/8 transition-all"
                   />
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   placeholder="Project Collaboration"
-                  className="w-full bg-white/5 border border-[#f47c20] rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-[#f47c20]/50 focus:bg-white/8 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-white/10/50 focus:bg-white/8 transition-all"
                 />
               </div>
 
@@ -216,7 +216,7 @@ export default function ContactPage() {
                   required
                   rows={6}
                   placeholder="Tell me about your project..."
-                  className="w-full bg-white/5 border border-[#f47c20] rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-[#f47c20]/50 focus:bg-white/8 transition-all resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-whitefocus:outline-none focus:border-white/10/50 focus:bg-white/8 transition-all resize-none"
                 />
               </div>
 
@@ -281,14 +281,14 @@ export default function ContactPage() {
                     href={info.href}
                     target={info.href.startsWith("http") ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 bg-white/5 border border-[#f47c20] rounded-2xl px-5 py-4 hover:bg-white/10 hover:border-[#f47c20]/30 transition-all group"
+                    className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 hover:bg-white/10 hover:border-white/10/30 transition-all group"
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="w-11 h-11 rounded-xl bg-[#f47c20]/10 border border-[#f47c20]/20 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-[#f47c20]/20 transition-all">
+                    <div className="w-11 h-11 rounded-xl  border-2 border-[#f47c20] flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-[#f47c20]/20 transition-all">
                       {info.icon}
                     </div>
                     <div>
@@ -316,7 +316,7 @@ export default function ContactPage() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-white/5 border border-[#f47c20] rounded-xl px-4 py-2.5 text-white text-xs font-mono hover:bg-white/10 hover:border-[#f47c20]/30 hover:text-white transition-all"
+                    className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs font-mono hover:bg-white/10 hover:border-white/10/30 hover:text-white transition-all"
                   >
                     <span>{s.icon}</span>
                     {s.label}
@@ -326,7 +326,7 @@ export default function ContactPage() {
             </div>
 
             {/* Availability Card */}
-            <div className="bg-[#f47c20]/10 border border-[#f47c20] rounded-2xl p-5">
+            <div className="bg-[#f47c20]/10 border border-white/10 rounded-2xl p-5">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-green-400 text-xs font-mono font-medium">

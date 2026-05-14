@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Button from "./ui/Button";
+import Image from "next/image";
 
 type NavItem = {
   id: string;
@@ -15,8 +16,9 @@ const navItems: NavItem[] = [
   { id: "home", label: "Home", href: "/", scroll: true },
   { id: "services", label: "Services", scroll: true },
   { id: "projects", label: "Projects", scroll: true },
+  { id: "clients", label: "Clients", scroll: true },
   { id: "about", label: "About", href: "/about", scroll: false },
-  { id: "contact", label: "Contact", href: "contact", scroll: false },
+  { id: "contact", label: "Contact", href: "/contact", scroll: false },
 ];
 
 export default function Navbar() {
@@ -24,34 +26,24 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  const [indicator, setIndicator] = useState({
-    left: 0,
-    width: 0,
-  });
+  const [indicator, setIndicator] = useState({ left: 0, width: 0 });
 
   const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
   const pathname = usePathname();
   const router = useRouter();
-
   const isHomePage = pathname === "/";
 
   // =========================
   // Navbar scroll background
   // =========================
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 30);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
-
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   // =========================
-  // Sync active route (About page, dll)
+  // Sync active route
   // =========================
   useEffect(() => {
     const matched = navItems.find((item) => {
@@ -64,7 +56,6 @@ export default function Navbar() {
       return;
     }
 
-    // Kalau masuk homepage & masih di atas
     if (pathname === "/" && !pendingSection) {
       setActive("home");
     }
@@ -73,19 +64,22 @@ export default function Navbar() {
   // =========================
   // Scroll spy homepage
   // =========================
+  // =========================
+  // Handle scroll setelah
+  // pindah dari halaman lain
+  // =========================
+  // =========================
+  // Scroll spy homepage
+  // =========================
   useEffect(() => {
     if (!isHomePage) return;
 
     const handleSpy = () => {
       const pos = window.scrollY + 120;
-
       navItems.forEach((item) => {
         if (!item.scroll) return;
-
         const el = document.getElementById(item.id);
-
         if (!el) return;
-
         if (pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight) {
           setActive(item.id);
         }
@@ -93,12 +87,33 @@ export default function Navbar() {
     };
 
     handleSpy();
-
     window.addEventListener("scroll", handleSpy);
+    return () => window.removeEventListener("scroll", handleSpy);
+  }, [isHomePage]);
 
-    return () => {
-      window.removeEventListener("scroll", handleSpy);
-    };
+  // =========================
+  // Handle scroll setelah
+  // pindah dari halaman lain
+  // =========================
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const section = sessionStorage.getItem("scrollTo");
+    if (!section) return;
+
+    // Hapus dulu supaya tidak scroll ulang
+    sessionStorage.removeItem("scrollTo");
+
+    // Tunggu halaman render dulu baru scroll
+    const timeout = setTimeout(() => {
+      const el = document.getElementById(section);
+      if (el) {
+        window.scrollTo({ top: el.offsetTop - 20, behavior: "smooth" });
+        setPendingSection(null);
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
   }, [isHomePage]);
 
   // =========================
@@ -106,18 +121,14 @@ export default function Navbar() {
   // =========================
   useEffect(() => {
     const index = navItems.findIndex((i) => i.id === active);
-
     const el = itemRefs.current[index];
 
     if (el) {
-      setIndicator({
-        left: el.offsetLeft,
-        width: el.offsetWidth,
-      });
-    } else {
-      setIndicator({
-        left: 0,
-        width: 0,
+      requestAnimationFrame(() => {
+        setIndicator({
+          left: el.offsetLeft,
+          width: el.offsetWidth,
+        });
       });
     }
   }, [active]);
@@ -128,69 +139,34 @@ export default function Navbar() {
   const handleNav = (item: NavItem) => {
     setOpen(false);
 
-    // ======================
-    // Non-scroll page
-    // ======================
+    // Non-scroll page (About, Contact)
     if (!item.scroll) {
       setActive(item.id);
-
-      if (item.href) {
-        router.push(item.href);
-      }
-
+      if (item.href) router.push(item.href);
       return;
     }
 
-    // ======================
     // Scroll items
-    // ======================
     setActive(item.id);
     setPendingSection(item.id);
 
-    // Kalau dari halaman lain
+    // Dari halaman lain → push ke "/" dengan hash
     if (!isHomePage) {
+      // Simpan section yang dituju di sessionStorage
+      sessionStorage.setItem("scrollTo", item.id);
       router.push("/");
-
-      setTimeout(() => {
-        const el = document.getElementById(item.id);
-
-        if (el) {
-          window.scrollTo({
-            top: el.offsetTop - 20,
-            behavior: "smooth",
-          });
-
-          // reset pending setelah scroll mulai
-          setTimeout(() => {
-            setPendingSection(null);
-          }, 500);
-        }
-      }, 300);
-
       return;
     }
 
-    // Kalau sudah di homepage
+    // Sudah di homepage → langsung scroll
     const el = document.getElementById(item.id);
-
     if (el) {
-      window.scrollTo({
-        top: el.offsetTop - 20,
-        behavior: "smooth",
-      });
-      // reset pending setelah scroll mulai
-      setTimeout(() => {
-        setPendingSection(null);
-      }, 500);
+      window.scrollTo({ top: el.offsetTop - 20, behavior: "smooth" });
+      setTimeout(() => setPendingSection(null), 500);
     }
   };
 
-  // =========================
-  // Active checker
-  // =========================
-  const isActive = (item: NavItem) => {
-    return active === item.id;
-  };
+  const isActive = (item: NavItem) => active === item.id;
 
   return (
     <nav
@@ -207,42 +183,41 @@ export default function Navbar() {
       `}
     >
       {/* Logo */}
-      <div
+      <button
+        type="button"
         onClick={() => handleNav(navItems[0])}
-        className="
-          text-white font-bold text-lg md:text-xl
-          cursor-pointer transition-colors
-          hover:text-[#f47c20]
-        "
+        className="group flex items-center gap-2 cursor-pointer"
+        aria-label="Go to home section"
       >
-        Mrstudio<span className="text-[#f47c20]">.</span>
-      </div>
+        <div className="flex h-9 w-9 items-center bg-white rounded-md border border-[#f47c20] justify-center overflow-hidden">
+          <Image
+            src="/favicon.ico"
+            alt="Revormasi.dev Logo"
+            width={180}
+            height={180}
+            priority
+            className="h-full w-full object-contain"
+          />
+        </div>
+
+        <span className="text-lg font-extrabold tracking-tight text-white md:text-xl">
+          <span className="transition-colors group-hover:text-[#f47c20]">
+            Revormasi
+          </span>
+          <span className="text-[#f47c20]">.dev</span>
+        </span>
+      </button>
 
       {/* Desktop Menu */}
-      <div
-        className="
-          hidden md:flex relative items-center gap-1
-          bg-white/5 border border-white/10
-          rounded-full px-3 py-2
-          backdrop-blur-md
-        "
-      >
+      <div className="hidden md:flex relative items-center gap-1 bg-white/5 border border-white/10 rounded-full px-3 py-2 backdrop-blur-md">
         {/* Active Pill */}
-        {indicator.width > 0 && (
-          <div
-            className="
-              absolute top-1 bottom-1
-              bg-[#f47c20]/20
-              border border-[#f47c20]/30
-              rounded-full
-              transition-all duration-300
-            "
-            style={{
-              left: indicator.left,
-              width: indicator.width,
-            }}
-          />
-        )}
+        <div
+          className="absolute top-1 bottom-1 bg-[#f47c20] rounded-full transition-all duration-300 ease-in-out"
+          style={{
+            left: indicator.left,
+            width: indicator.width,
+          }}
+        />
 
         {navItems.map((item, i) => (
           <button
@@ -252,15 +227,10 @@ export default function Navbar() {
             }}
             onClick={() => handleNav(item)}
             className={`
-              relative z-10
-              px-3 py-1
+              relative z-10 px-3 py-1
               text-sm font-medium
-              transition-colors
-              ${
-                isActive(item)
-                  ? "text-[#f47c20]"
-                  : "text-white/80 hover:text-white"
-              }
+              transition-colors duration-300
+              ${isActive(item) ? "text-white" : "text-white hover:text-white"}
             `}
           >
             {item.label}
@@ -298,16 +268,18 @@ export default function Navbar() {
           md:hidden
         `}
       >
-        {/* Close */}
+        {/* Close Button */}
         <button
           onClick={() => setOpen(false)}
-          className="
-            self-end text-2xl mb-4
-            text-white/50 hover:text-white
-          "
+          className="self-end text-2xl mb-4 text-white/50 hover:text-white transition-colors"
         >
           ✕
         </button>
+
+        {/* Mobile Logo */}
+        <div className="text-white font-bold text-xl -mt-4 mb-2">
+          Mrstudio<span className="text-[#f47c20]">.</span>
+        </div>
 
         {/* Mobile Items */}
         {navItems.map((item) => (
@@ -315,8 +287,7 @@ export default function Navbar() {
             key={item.id}
             onClick={() => handleNav(item)}
             className={`
-              text-left text-lg font-medium
-              transition-colors
+              text-left text-lg font-medium transition-colors
               ${
                 isActive(item)
                   ? "text-[#f47c20]"

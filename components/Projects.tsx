@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
@@ -14,7 +15,10 @@ export default function Projects() {
     active === "All" ? projects : projects.filter((p) => p.tag === active);
 
   return (
-    <SectionWrapper id="projects" className="px-6 md:px-12 lg:px-16 py-16 md:py-20">
+    <SectionWrapper
+      id="projects"
+      className="px-6 md:px-12 lg:px-16 py-16 md:py-20"
+    >
       <div className="absolute top-20 right-20 w-72 h-72 bg-[#9b59b6]/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header */}
@@ -35,7 +39,7 @@ export default function Projects() {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
           Recent <span className="text-[#f47c20]">Projects</span>
         </h2>
-        <p className="text-white/50 text-sm mt-4 max-w-lg mx-auto leading-relaxed px-4 md:px-0">
+        <p className="text-white text-sm mt-4 max-w-lg mx-auto leading-relaxed px-4 md:px-0">
           A collection of projects I've built with passion, precision, and
           modern technologies.
         </p>
@@ -56,7 +60,7 @@ export default function Projects() {
             className={`px-4 md:px-5 py-1.5 md:py-2 rounded-full text-xs font-mono font-medium transition-all ${
               active === f
                 ? "bg-[#f47c20] text-white shadow-lg shadow-[#f47c20]/20"
-                : "bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white"
+                : "bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:text-white"
             }`}
           >
             {f}
@@ -84,19 +88,35 @@ export default function Projects() {
             >
               {/* Project Visual */}
               <div
-                className={`relative h-40 md:h-44 bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden`}
+                className={`relative h-40 md:h-44 bg-gradient-to-br ${project.color} flex items-center justify-center overflow-hidden group`}
               >
-                <motion.span
-                  className="text-5xl md:text-6xl"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  {project.emoji}
-                </motion.span>
-                <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm border border-white/20 rounded-full px-2.5 py-1">
-                  <span className="text-white/80 text-xs font-mono">
+                {/* Background Image */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="400px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                {/* Overlay saat hover — bukan transparent */}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/50 transition-all duration-300" />
+
+                {/* Category badge */}
+                <div className="absolute top-3 right-3 bg-black/40 backdrop-blur-sm border border-white/20 rounded-full px-2.5 py-1 z-10">
+                  <span className="text-white text-xs font-mono">
                     {project.category}
                   </span>
+                </div>
+
+                {/* Hover — View Project */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="bg-[#f47c20] text-white py-2 px-2 rounded-full text-xs font-mono font-medium flex items-center "
+                  >
+                    View Project →
+                  </Link>
                 </div>
               </div>
 
@@ -105,7 +125,7 @@ export default function Projects() {
                 <h3 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-[#f47c20] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-white/50 text-xs leading-relaxed mb-4">
+                <p className="text-white text-xs leading-relaxed mb-4">
                   {project.desc}
                 </p>
 
@@ -114,7 +134,7 @@ export default function Projects() {
                   {project.tech.map((t, j) => (
                     <span
                       key={j}
-                      className="bg-white/5 border border-white/10 text-white/60 text-xs font-mono px-2 md:px-2.5 py-1 rounded-lg"
+                      className="bg-white/5 border border-white/10 text-white text-xs font-mono px-2 md:px-2.5 py-1 rounded-lg"
                     >
                       {t}
                     </span>
@@ -125,7 +145,7 @@ export default function Projects() {
                 <div className="flex items-center justify-between pt-3 border-t border-white/10">
                   <Link
                     href={`/projects/${project.id}`}
-                    className="text-[#f47c20] text-xs font-mono font-medium hover:underline"
+                    className="bg-[#f47c20] text-white py-2 px-2 rounded-full text-xs font-mono font-medium flex items-center "
                   >
                     View Project →
                   </Link>
@@ -133,7 +153,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/40 text-xs font-mono hover:text-white transition"
+                    className="text-white text-xs font-bold hover:text-white transition"
                   >
                     GitHub ↗
                   </a>
@@ -152,11 +172,10 @@ export default function Projects() {
         transition={{ duration: 0.5, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <button className="bg-white/5 border border-white/10 text-white/70 px-6 md:px-8 py-2.5 md:py-3 rounded-xl text-sm font-mono hover:bg-white/10 hover:border-[#f47c20]/30 hover:text-white transition-all">
+        <button className="bg-[#f47c20] border border-white/10 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-xl text-sm font-bold hover:bg-white/10 hover:border-[#f47c20]/30 hover:text-white transition-all cursor-pointer">
           View All Projects →
         </button>
       </motion.div>
-
     </SectionWrapper>
   );
 }

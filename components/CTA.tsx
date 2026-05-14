@@ -67,7 +67,7 @@ export default function CTA() {
             href="https://wa.me/6281234567890"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/5 border border-[#f47c20] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/10 hover:border-[#f47c20]/30 hover:-translate-y-0.5 transition-all w-full sm:w-auto text-center"
+            className="bg-white/5 border border-white/10 text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/10 hover:border-white/10/30 hover:-translate-y-0.5 transition-all w-full sm:w-auto text-center"
           >
             💬 WhatsApp Me
           </a>
@@ -112,7 +112,7 @@ export default function CTA() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white/5 border border-[#f47c20] rounded-xl px-4 py-2.5 text-white text-xs font-mono hover:bg-white/10 hover:border-[#f47c20]/30 hover:text-white transition-all"
+              className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-xs font-mono hover:bg-white/10 hover:border-white/10/30 hover:text-white transition-all"
             >
               <span>{social.icon}</span>
               {social.label}

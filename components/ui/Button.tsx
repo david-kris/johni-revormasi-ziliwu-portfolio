@@ -29,8 +29,8 @@ export default function Button({
           `,
         variant === "outline" &&
           `
-          border-2 border-[#f47c20]
-          text-white/80
+          border border-white/10
+          text-white
           hover:bg-[#f47c20]/10
           hover:text-white
           hover:scale-105

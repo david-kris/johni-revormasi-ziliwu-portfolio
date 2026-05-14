@@ -4,8 +4,6 @@ import Image from "next/image";
 import SectionWrapper from "@/components/SectionWrapper";
 import { FaWhatsapp } from "react-icons/fa";
 
-
-
 const skills = [
   { name: "Next.js", level: 90, icon: "▲" },
   { name: "React", level: 90, icon: "⚛️" },
@@ -117,8 +115,6 @@ const item = {
   },
 };
 
-
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
@@ -162,7 +158,7 @@ export default function AboutPage() {
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                  className="absolute w-52 h-52 rounded-full border border-dashed border-[#f47c20]/30"
+                  className="absolute w-52 h-52 rounded-full border-2 border-dashed border-white"
                 />
 
                 {/* Profile Glow */}
@@ -176,7 +172,7 @@ export default function AboutPage() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="relative w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-[3px] border-[#f47c20]/60 shadow-2xl shadow-[#f47c20]/20"
+                  className="relative w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-[3px] border-[#f47c20] shadow-2xl shadow-[#f47c20]/20"
                 >
                   <Image
                     src="/images/portfolio.webp"
@@ -220,7 +216,7 @@ export default function AboutPage() {
     text-4xl md:text-5xl
     font-extrabold
     leading-tight mb-4
-    tracking-tight
+    tracking-tight flex gap-2
   "
               variants={fadeUp}
               initial="hidden"
@@ -237,10 +233,11 @@ export default function AboutPage() {
       text-transparent
     "
               >
-                Johni Revormasi
+                Johni Revormasi 
               </span>
 
-              <br />
+              
+
 
               <span
                 className="
@@ -265,7 +262,7 @@ export default function AboutPage() {
               animate="visible"
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Web Developer
+              Web Developer & Founder of Revormasi <span className="text-[#f47c20]">.dev</span>
             </motion.p>
 
             {/* Bio */}
@@ -276,10 +273,15 @@ export default function AboutPage() {
               animate="visible"
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              Saya adalah seorang web developer yang passionate dalam membangun
-              aplikasi digital yang bersih, scalable, dan user-friendly. Dengan
-              pengalaman lebih dari 2 tahun di industri teknologi, saya telah
-              membantu berbagai client mewujudkan visi digital mereka.
+              Revormasi.dev adalah personal brand yang saya bangun sebagai ruang
+              untuk menghadirkan solusi digital modern melalui website yang
+              clean, responsive, scalable, dan user-friendly. Dengan pengalaman
+              lebih dari 2 tahun di bidang teknologi, saya membantu bisnis,
+              personal brand, dan individu mengubah ide menjadi produk digital
+              yang fungsional dan bernilai. Bagi saya, website yang baik bukan
+              hanya terlihat menarik, tetapi juga cepat, mudah digunakan,
+              memiliki struktur kode yang rapi, dan siap dikembangkan untuk
+              kebutuhan jangka panjang.
             </motion.p>
 
             <motion.p
@@ -303,7 +305,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <a
-                href="/cv.pdf"
+                href="/cv/CV-Johni Revormasi Ziliwu.pdf"
                 download
                 className="bg-[#f47c20] text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-[#d96a10] hover:-translate-y-0.5 transition-all shadow-lg shadow-[#f47c20]/20"
               >
@@ -313,7 +315,7 @@ export default function AboutPage() {
                 href="https://wa.me/625215644688"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-row  items-center gap-2 bg-white/5 border border-[#f47c20] text-white px-4 py-1.5 rounded-xl font-bold text-sm hover:bg-white/10 hover:border-[#f47c20]/10 hover:-translate-y-0.5 transition-all w-full sm:w-auto text-center"
+                className="flex flex-row  items-center gap-2 bg-white/5 border border-white/10 text-white px-4 py-1.5 rounded-xl font-bold text-sm hover:bg-white/10 hover:border-white/10/10 hover:-translate-y-0.5 transition-all w-full sm:w-auto text-center"
               >
                 <FaWhatsapp className="text-white text-3xl" /> WhatsApp Me
               </a>
@@ -332,7 +334,7 @@ export default function AboutPage() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="bg-white/5 border border-[#f47c20] rounded-2xl p-5 text-center hover:bg-white/10 hover:border-[#f47c20]/30 hover:-translate-y-1 transition-all"
+              className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center hover:bg-white/10 hover:border-white/10/30 hover:-translate-y-1 transition-all"
             >
               <div className="text-2xl mb-2">{stat.icon}</div>
               <div className="text-3xl font-extrabold text-white mb-1">
@@ -347,9 +349,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* SKILLS SECTION */}
-      <SectionWrapper
-        className="px-6 md:px-12 lg:px-16 py-20"
-      >
+      <SectionWrapper className="px-6 md:px-12 lg:px-16 py-20">
         <motion.div
           className="text-center mb-12"
           variants={fadeUp}
@@ -374,7 +374,7 @@ export default function AboutPage() {
           {skills.map((skill, i) => (
             <motion.div
               key={i}
-              className="bg-white/5 border border-[#f47c20] rounded-2xl p-5 hover:border-[#f47c20]/30 transition-all"
+              className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-white/10/30 transition-all"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -409,10 +409,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* EXPERIENCE & EDUCATION */}
-      <SectionWrapper
-        
-        className="px-6 md:px-12 lg:px-16 py-20"
-      >
+      <SectionWrapper className="px-6 md:px-12 lg:px-16 py-20">
         <motion.div
           className="text-center mb-12"
           variants={fadeUp}
@@ -455,11 +452,11 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                   >
                     {/* Dot */}
-                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-[#f47c20]/20 border border-[#f47c20]/50 flex items-center justify-center">
+                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-[#f47c20]/20 border border-white/10/50 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#f47c20]" />
                     </div>
 
-                    <div className="bg-white/5 border border-[#f47c20] rounded-2xl p-5 hover:border-[#f47c20]/30 transition-all">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-white/10/30 transition-all">
                       <span className="text-[#f47c20] text-sm font-bold mb-2 block">
                         {exp.year}
                       </span>
@@ -501,11 +498,11 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                   >
                     {/* Dot */}
-                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-[#f47c20]/20 border border-[#f47c20]/50 flex items-center justify-center">
+                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-[#f47c20]/20 border border-white/10/50 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-[#f47c20]" />
                     </div>
 
-                    <div className="bg-white/5 border border-[#f47c20] rounded-2xl p-5 hover:border-[#f47c20]/30 transition-all">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-white/10/30 transition-all">
                       <span className="text-[#f47c20] text-sm font-bold mb-2 block">
                         {edu.year}
                       </span>

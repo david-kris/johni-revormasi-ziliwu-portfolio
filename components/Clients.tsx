@@ -103,7 +103,7 @@ export default function Clients() {
             key={i}
             variants={item}
             whileHover={{ scale: 1.05 }}
-            className="bg-white/10 border-2 border-[#f47c20] rounded-2xl p-6 text-center backdrop-blur-md hover:border-[#f47c20]/40 transition-all"
+            className="bg-white/10 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-md hover:border-white/10/40 transition-all"
           >
             <div className="text-2xl mb-2">{stat.icon}</div>
             <div className="text-3xl font-extrabold text-white">
@@ -129,7 +129,7 @@ export default function Clients() {
             key={i}
             variants={item}
             whileHover={{ y: -8 }}
-            className="relative bg-white/15 border-2 border-[#f47c20] rounded-2xl p-6 backdrop-blur-md hover:border-[#f47c20]/40 transition-all"
+            className="relative bg-white/15 border border-white/10 rounded-2xl p-6 backdrop-blur-md hover:border-white/10/40 transition-all"
           >
             {/* glow */}
             <div className="absolute inset-0 bg-[#f47c20]/5 opacity-0 hover:opacity-100 transition rounded-2xl" />
@@ -146,7 +146,7 @@ export default function Clients() {
 
             {/* author */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#f47c20]/20 border border-[#f47c20]/30 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full  border-2 border-white flex items-center justify-center">
                 {t.avatar}
               </div>
 

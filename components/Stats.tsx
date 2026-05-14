@@ -114,7 +114,7 @@ export default function Stats() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-white/5 border-2 border-[#f47c20] rounded-3xl p-5 md:p-7 w-full lg:min-w-[320px]"
+            className="bg-white/5 border border-white/10 rounded-3xl p-5 md:p-7 w-full lg:min-w-[320px]"
           >
             {/* Header */}
             <div className="flex justify-between items-start mb-4">
@@ -127,7 +127,7 @@ export default function Stats() {
                 </h3>
               </div>
 
-              <div className="bg-[#f47c20]/20 border-2 border-[#f47c20] rounded-xl px-3 py-1.5">
+              <div className="bg-[#f47c20]/20 border border-white/10 rounded-xl px-3 py-1.5">
                 <span className="text-white text-xs font-mono">2024</span>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function Stats() {
                   key={i}
                   variants={item}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className={`bg-gradient-to-br ${stat.color} border-2 border-[#f47c20] rounded-2xl p-5 transition-all`}
+                  className={`bg-gradient-to-br ${stat.color} border border-white/10 rounded-2xl p-5 transition-all`}
                 >
                   <div className="text-2xl mb-3">{stat.icon}</div>
 

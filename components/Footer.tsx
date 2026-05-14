@@ -31,7 +31,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <h1 className="text-2xl font-extrabold text-white">
-            Mrstudio<span className="text-[#f47c20]">.</span>
+            Revormasi<span className="text-[#f47c20]">.dev</span>
           </h1>
 
           <p className="text-white text-sm mt-4 leading-relaxed max-w-xs">
@@ -93,7 +93,7 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="max-w-6xl mx-auto mt-16 pt-6 border-t border-white flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-white text-xs font-mono">
-          © {new Date().getFullYear()} Mrstudio. All rights reserved.
+          © {new Date().getFullYear()} Revormasi <span className="text-[#f47c20]">.dev</span> . All rights reserved.
         </p>
 
         <div className="flex gap-5 text-xs">

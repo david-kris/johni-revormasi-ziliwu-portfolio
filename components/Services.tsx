@@ -63,7 +63,6 @@ export default function Services() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#f47c20]/10 blur-[140px] rounded-full -z-10" />
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-
         {/* 🧠 LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -88,16 +87,16 @@ export default function Services() {
             digital products with clean UI and strong UX architecture.
           </p>
 
-         <Button
-                     variant="primary"
-                     onClick={() => {
-                       document.getElementById("contact")?.scrollIntoView({
-                         behavior: "smooth",
-                       });
-                     }}
-                   >
-                    Hire Me
-                   </Button>
+          <Button className="mt-4"
+            variant="primary"
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            Hire Me
+          </Button>
         </motion.div>
 
         {/* 🧱 RIGHT CARDS */}
@@ -117,7 +116,7 @@ export default function Services() {
                 y: -4,
               }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="group relative bg-white/5 border-2 border-[#f47c20] rounded-2xl p-5 backdrop-blur-md hover:border-[#f47c20]/40 transition-all cursor-pointer overflow-hidden"
+              className="group relative bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-[#f47c20]/40 transition-all cursor-pointer overflow-hidden"
             >
               {/* glow hover layer */}
               <div className="absolute inset-0 bg-[#f47c20]/5 opacity-0 group-hover:opacity-100 transition duration-300 rounded-2xl" />

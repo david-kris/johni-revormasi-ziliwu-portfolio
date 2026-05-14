@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import TypingEffect from "./TypingEffect";
 import SectionWrapper from "./SectionWrapper";
 import Button from "./ui/Button";
+import Link from "next/link";
 
 // 🔥 Animation setup
 const container = {
@@ -51,7 +52,7 @@ export default function Hero() {
         {/* 🚀 Badge */}
         <motion.div
           variants={item}
-          className="mb-2 px-4 py-1.5 rounded-full border-2 border-[#f47c20] bg-white/5 backdrop-blur-md text-sm text-white"
+          className="mb-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-white"
         >
           🚀 Available for freelance work
         </motion.div>
@@ -85,10 +86,10 @@ export default function Hero() {
           ].map((item, i) => (
             <div
               key={i}
-              className="px-5 py-3 rounded-xl bg-white/5 border-2 border-[#f47c20] backdrop-blur-lg"
+              className="px-5 py-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-lg"
             >
               <div className="text-white text-lg font-bold">{item.value}</div>
-              <div className="text-white/50 text-xs">{item.label}</div>
+              <div className="text-white text-xs">{item.label}</div>
             </div>
           ))}
         </motion.div>
@@ -98,16 +99,18 @@ export default function Hero() {
           variants={item}
           className="flex gap-4 mt-8 flex-wrap justify-center"
         >
-          <Button
-            variant="primary"
-            onClick={() => {
-              document.getElementById("contact")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-          >
-            Get Started
-          </Button>
+          <Link href="/contact">
+            <Button
+              variant="primary"
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            >
+              Get Started
+            </Button>
+          </Link>
           <Button
             variant="outline"
             onClick={() => {

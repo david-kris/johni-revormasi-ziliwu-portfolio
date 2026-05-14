@@ -1,152 +1,189 @@
 export const projects = [
   {
-    id: "lighthouse-app",
-    title: "Lighthouse App",
-    category: "Mobile App",
-    tag: "Mobile",
-    emoji: "🏔️",
-    color: "from-[#1a237e] to-[#283593]",
-    desc: "A travel and adventure app helping users discover hidden gems and plan trips effortlessly.",
-    longDesc: `Lighthouse App is a full-featured travel companion built for adventure seekers. 
-    The app provides personalized recommendations based on user preferences, real-time weather 
-    updates, offline map support, and a community-driven review system. Designed with a clean 
-    and intuitive UI to make every trip planning experience enjoyable.`,
-    tech: ["React Native", "Node.js", "MongoDB"],
-    features: [
-      "Personalized trip recommendations",
-      "Real-time weather integration",
-      "Offline map support",
-      "Community reviews & ratings",
-      "Push notifications",
-    ],
-    demo: "https://demo.example.com",
-    github: "https://github.com/johni/lighthouse-app",
-    status: "Completed",
-    year: "2024",
-  },
+  id: "invoice-digitaliz",
+  title: "Digital Invoice System",
+  category: "Web Application",
+  tag: "Internship Project",
+  image: "/projects/invoice.png",
+  color: "from-[#0f172a] to-[#1e293b]",
+  desc: "A digital invoicing system designed to simplify invoice management, payment tracking, and business transactions.",
+
+  longDesc: `Digital Invoice System is a web-based application developed during my internship program. 
+  The system helps businesses create, manage, and monitor invoices efficiently in one centralized platform. 
+  It includes features for invoice generation, payment status tracking, customer management, and transaction history. 
+  Built with a modern and responsive interface to improve workflow efficiency and user experience.`,
+
+  tech: ["Laravel", "Bootstrap", "Tailwind CSS", "GIT"],
+
+  features: [
+    "Create and manage invoices",
+    "Payment status tracking",
+    "Customer data management",
+    "Transaction history monitoring",
+    "Responsive dashboard interface",
+    "Secure authentication system",
+  ],
+
+  demo: "https://demo.example.com",
+  github: "https://github.com/johnirevormasiziliwu/Project-Magang-Yayasan-Hasnur-Centre-Invoice-Digitaliz-Aplikasi-Pengingat-Tagihan.git",
+
+  status: "Completed",
+  year: "2023",
+},
   {
-    id: "bryan-lane",
-    title: "Bryan Lane",
-    category: "Web App",
-    tag: "Web",
-    emoji: "🛍️",
-    color: "from-[#4a148c] to-[#6a1b9a]",
-    desc: "A modern e-commerce platform with seamless UX and high performance product management.",
-    longDesc: `Bryan Lane is a high-performance e-commerce platform built for modern retail businesses. 
-    Features include advanced product filtering, real-time inventory management, secure payment 
-    gateway integration, and a powerful admin dashboard. Optimized for speed and SEO to maximize 
-    online visibility and conversions.`,
-    tech: ["Next.js", "Tailwind", "PostgreSQL"],
-    features: [
-      "Advanced product filtering",
-      "Real-time inventory management",
-      "Secure payment gateway",
-      "Admin dashboard",
-      "SEO optimized",
-    ],
-    demo: "https://demo.example.com",
-    github: "https://github.com/johni/bryan-lane",
-    status: "Completed",
-    year: "2024",
-  },
+  id: "rent-house",
+  title: "Rent House",
+  category: "Web Application",
+  tag: "Web",
+  image: "/projects/web-rent-house.png",
+  color: "from-[#0f766e] to-[#115e59]",
+
+  desc: "A modern house rental platform that helps users discover, book, and manage rental properties بسهولة and efficiently.",
+
+  longDesc: `Rent House is a modern web application developed to simplify the process of finding and renting properties online. 
+  The platform allows users to explore available houses, view detailed property information, and make bookings through an intuitive interface. 
+  It also provides property management features for owners and administrators, including listing management, booking tracking, and customer interaction. 
+  Built with a responsive and clean UI to ensure a smooth user experience across all devices.`,
+
+  tech: ["Next.js", "TypeScript", "Tailwind CSS", "MySQL", "GIT"],
+
+  features: [
+    "Property listing management",
+    "House search and filtering",
+    "Online booking system",
+    "Responsive user interface",
+    "Authentication and user management",
+    "Admin dashboard",
+  ],
+
+  demo: "https://web-rent-house.vercel.app/",
+  github: "https://github.com/jon-renzil-08/web-rent-house-frontend.git",
+
+  status: "Completed",
+  year: "2024",
+},
   {
-    id: "mama-apps",
-    title: "Mama Apps",
-    category: "UI/UX Design",
-    tag: "Design",
-    emoji: "📱",
-    color: "from-[#1b0036] to-[#4a0080]",
-    desc: "A family management app designed to keep families connected and organized daily.",
-    longDesc: `Mama Apps is a family-centered productivity application that helps families stay 
-    connected and organized. Features include shared calendars, task assignments, grocery lists, 
-    family chat, and milestone tracking. The app focuses on simplicity and warmth in its design 
-    to appeal to all age groups within a family.`,
-    tech: ["Figma", "React", "Firebase"],
-    features: [
-      "Shared family calendar",
-      "Task & chore management",
-      "Grocery list sharing",
-      "Family group chat",
-      "Milestone tracking",
-    ],
-    demo: "https://demo.example.com",
-    github: "https://github.com/johni/mama-apps",
-    status: "Completed",
-    year: "2023",
-  },
+  id: "mudanusa",
+  title: "MudaNusa",
+  category: "Web Application",
+  tag: "Web",
+  image: "/projects/mudanusa.png",
+  color: "from-[#0f172a] to-[#1e3a8a]",
+
+  desc: "A digital platform designed to support youth communities, creativity, and collaboration across Indonesia.",
+
+  longDesc: `MudaNusa is a modern web application created to empower young people through technology and community engagement. 
+  The platform provides a space for users to explore events, share creative projects, connect with communities, and access useful information. 
+  Built with a clean and responsive interface, MudaNusa focuses on delivering an engaging user experience while encouraging collaboration and innovation among youth communities.`,
+
+  tech: ["Laravel", "Tailwind CSS", "MySQL", "GIT"],
+
+  features: [
+    "Community and event management",
+    "User authentication system",
+    "Responsive modern interface",
+    "Content sharing platform",
+    "Interactive user dashboard",
+    "Real-time data integration",
+  ],
+
+  demo: "https://mudanusa.id/",
+  github: "https://github.com/Digitaliz-Organization/muda-changers",
+
+  status: "Completed",
+  year: "2025",
+},
   {
-    id: "dashboard-analytics",
-    title: "Dashboard Analytics",
-    category: "Web App",
-    tag: "Web",
-    emoji: "📊",
-    color: "from-[#0d47a1] to-[#1565c0]",
-    desc: "A powerful analytics dashboard with real-time data visualization and reporting tools.",
-    longDesc: `Dashboard Analytics is a comprehensive business intelligence tool that transforms 
-    raw data into actionable insights. Features real-time charts, customizable widgets, automated 
-    report generation, and multi-source data integration. Built for scalability to handle large 
-    datasets without compromising performance.`,
-    tech: ["React", "Chart.js", "Laravel"],
-    features: [
-      "Real-time data visualization",
-      "Customizable dashboard widgets",
-      "Automated report generation",
-      "Multi-source data integration",
-      "Export to PDF & Excel",
-    ],
-    demo: "https://demo.example.com",
-    github: "https://github.com/johni/dashboard-analytics",
-    status: "In Progress",
-    year: "2024",
-  },
-  {
-    id: "portfolio-cms",
-    title: "Portfolio CMS",
-    category: "Full Stack",
-    tag: "Full Stack",
-    emoji: "🎨",
-    color: "from-[#b71c1c] to-[#c62828]",
-    desc: "A custom CMS built for creative professionals to showcase their work beautifully.",
-    longDesc: `Portfolio CMS is a headless content management system specifically designed for 
-    designers, photographers, and creative professionals. It offers drag-and-drop page building, 
-    media management, SEO tools, and custom domain support. The system is lightweight yet powerful 
-    enough to handle complex portfolio structures.`,
-    tech: ["Next.js", "Prisma", "MySQL"],
-    features: [
-      "Drag & drop page builder",
-      "Media library management",
-      "Custom domain support",
-      "SEO management tools",
-      "Multi-user collaboration",
-    ],
-    demo: "https://demo.example.com",
-    github: "https://github.com/johni/portfolio-cms",
-    status: "Completed",
-    year: "2023",
-  },
-  {
-    id: "chat-realtime",
-    title: "Chat Real-time",
-    category: "Full Stack",
-    tag: "Full Stack",
-    emoji: "💬",
-    color: "from-[#1b5e20] to-[#2e7d32]",
-    desc: "A real-time chat application with rooms, notifications, and file sharing features.",
-    longDesc: `Chat Real-time is a modern messaging platform built for teams and communities. 
-    It supports public and private rooms, direct messaging, file sharing, emoji reactions, 
-    and message threading. Built on WebSocket technology for instant message delivery with 
-    end-to-end encryption for maximum security.`,
-    tech: ["Socket.io", "Node.js", "React"],
-    features: [
-      "Public & private chat rooms",
-      "Direct messaging",
-      "File & media sharing",
-      "Emoji reactions",
-      "End-to-end encryption",
-    ],
-    demo: "https://demo.example.com",
-    github: "https://github.com/johni/chat-realtime",
-    status: "Completed",
-    year: "2023",
-  },
+  id: "akusaralab",
+  title: "AkusaraLab",
+  category: "Web Application",
+  tag: "Web",
+  image: "/projects/akusaralab.png",
+  color: "from-[#0f172a] to-[#2563eb]",
+
+  desc: "A modern laboratory and digital service platform built to manage information, services, and user interactions efficiently.",
+
+  longDesc: `AkusaraLab is a web-based application developed to provide a modern and efficient digital platform for laboratory services and information management. 
+  The application focuses on delivering a clean user experience while helping users access services, manage data, and interact with the platform seamlessly. 
+  Built with responsive design principles and modern web technologies to ensure performance, scalability, and accessibility across devices.`,
+
+  tech: ["Laravel", "Tailwind CSS", "MySQL", "GIT"],
+
+  features: [
+    "Responsive modern dashboard",
+    "User authentication system",
+    "Service and information management",
+    "Interactive user interface",
+    "Data management features",
+    "Optimized performance and scalability",
+  ],
+
+  demo: "https://akusaralab.id/",
+  github: "https://github.com/zeniit-consulting/akusara-website",
+
+  status: "Completed",
+  year: "2026",
+},
+ {
+  id: "zenikonsulting",
+  title: "ZeniKonsulting",
+  category: "Web Application",
+  tag: "Full Stack",
+  image: "/projects/zenikonsulting.png",
+  color: "from-[#1e293b] to-[#334155]",
+
+  desc: "A professional consulting company website designed to showcase services, manage client interactions, and build digital credibility.",
+
+  longDesc: `ZeniKonsulting is a modern full-stack web application developed for a consulting business to strengthen its online presence and improve client engagement. 
+  The platform provides service information, company profiles, contact management, and a responsive user experience tailored for professional audiences. 
+  Built with scalable architecture and modern technologies to ensure performance, maintainability, and accessibility across devices.`,
+
+  tech: ["Astro", "TypeScript", "Tailwind CSS", "MySQL"],
+
+  features: [
+    "Professional company profile",
+    "Service showcase pages",
+    "Responsive modern design",
+    "Contact and inquiry management",
+    "SEO optimized structure",
+    "Scalable full-stack architecture",
+  ],
+
+  demo: "https://zeniconsulting.com/",
+  github: "https://github.com/zeniit-consulting/zeni-website.git",
+
+  status: "Completed",
+  year: "2026",
+},
+ {
+  id: "legal-by-konsulin",
+  title: "Legal by Konsulin",
+  category: "Web Application",
+  tag: "Full Stack",
+  image: "/projects/legal-by-konsulin.png",
+  color: "from-[#0f172a] to-[#475569]",
+
+  desc: "A professional legal service platform designed to simplify legal consultations, document management, and client communication.",
+
+  longDesc: `Legal by Konsulin is a modern full-stack web application developed to help users access legal services more efficiently through a digital platform. 
+  The application provides features for legal consultation, service information, document handling, and client communication in a professional and user-friendly environment. 
+  Built with modern technologies and responsive design principles to ensure accessibility, scalability, and seamless user experience across devices.`,
+
+  tech: ["Laravel", "Liveware", "Tailwind CSS", "GIT", "MySQL"],
+
+  features: [
+    "Legal consultation platform",
+    "Responsive modern interface",
+    "Client communication system",
+    "Service and document management",
+    "Authentication and user management",
+    "SEO optimized website structure",
+  ],
+
+  demo: "https://legalbykonsulin.id/",
+  github: "https://github.com/zeniit-consulting/legal-by-konsulin",
+
+  status: "Completed",
+  year: "2026",
+},
 ];
