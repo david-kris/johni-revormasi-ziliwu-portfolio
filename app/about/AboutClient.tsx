@@ -305,7 +305,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <a
-                href="/cv/CV-Johni Revormasi Ziliwu.pdf"
+                href="/cv/Johni_Revormasi_Ziliwu_CV.pdf"
                 download
                 className="bg-[#f47c20] text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-[#d96a10] hover:-translate-y-0.5 transition-all shadow-lg shadow-[#f47c20]/20"
               >
