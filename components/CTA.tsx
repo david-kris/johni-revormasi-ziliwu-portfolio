@@ -58,13 +58,13 @@ export default function CTA() {
           viewport={{ once: true }}
         >
           <a
-            href="mailto:johni@email.com"
+            href="mailto:studiorevormasi@gmail.com"
             className="bg-[#f47c20] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#d96a10] hover:-translate-y-0.5 transition-all shadow-lg shadow-[#f47c20]/20 w-full sm:w-auto text-center"
           >
             📧 Send Me Email
           </a>
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6285215644688"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/5 border border-white/10 text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/10 hover:border-white/10/30 hover:-translate-y-0.5 transition-all w-full sm:w-auto text-center"
